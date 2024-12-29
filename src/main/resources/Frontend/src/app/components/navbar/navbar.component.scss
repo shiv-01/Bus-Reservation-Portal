@@ -1,0 +1,27 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.mr{
+    margin-right: 50px;
+}
+
+.ml{
+    margin-left: 5px;
+}
+.pop-up{
+    display:none;
+    background-color: white;
+    width: 40%;
+    margin: auto;
+    margin-top: 10px;;
+}
+.full-width{
+    width: 100%;
+}
+
+.logo{
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 5px;
+  width: 150px;
+}

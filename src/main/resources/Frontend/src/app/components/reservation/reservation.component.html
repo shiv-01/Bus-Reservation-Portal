@@ -1,0 +1,43 @@
+<div class="bootstrap-wrapper">
+<div class="container mr text-center">
+    <br>
+    <h2>Reservation Page</h2>
+    <br><br>
+    <form #busForm="ngForm" (ngSubmit)="showBuses(busForm.value)">
+    <div class="row text-center">
+        <div class="col-md-4 mt " style="float: right;">
+            <!-- <select id="selectTo" [(ngModel)]="myBusFrom" name="myBusFrom" class="form-select">
+                <option selected>Open this select menu</option>
+                <option *ngFor="let s of buses" [value]="s.routeFrom">{{s.routeFrom}}</option>
+            </select> -->
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="myBusFrom" name="myBusFrom" id="selectTo">
+                <option selected>Source</option>
+                <option *ngFor="let s of buses" [value]="s.routeFrom">{{s.routeFrom}}</option>
+            </select>
+        </div>
+      
+        <div class="col-md-4 mt " style="float: right;">
+            <!-- <label for="">Destination</label> -->
+            <select id="selectFrom" [(ngModel)]="myBusTo" name="myBusTo" class="form-select" aria-label="Default select example">
+                <option selected>Destination</option>
+                <option *ngFor="let s of buses"[value]="s.routeTo">{{s.routeTo}}</option>
+            </select>
+
+        </div>
+        <div class="col-xs-12 col-12 col-md-4 form-group mb-3 mt ">
+            <input type="text" [(ngModel)]="myDate"
+                   placeholder="Select Date"
+                   class="form-control"
+                   name="myDate"
+                   bsDatepicker
+                   [bsConfig]="{ isAnimated: true }">
+          </div>
+      
+    </div>
+    <div class="container text-center mt">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+
+</form>
+</div>
+</div>

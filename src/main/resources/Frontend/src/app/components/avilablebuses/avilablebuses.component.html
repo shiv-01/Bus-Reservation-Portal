@@ -1,0 +1,23 @@
+
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Bus Name</th>
+        <th scope="col">Bus Type</th>
+        <th scope="col">Arrival Time</th>
+        <th scope="col">Departure Time</th>
+        <th scope="col">Available Seats</th>
+        <th scope="col">Booking</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of allBuses">
+        <td>{{s.busName}}</td>
+        <td>{{s.busType}}</td>
+        <td>{{s.arrivalTime}}</td>
+        <td>{{s.departureTime}}</td>
+        <td>{{s.avaiableSeats}}</td>
+        <td><button (click)="getReserved(s)" mat-raised-button color="primary">Book It</button></td>
+      </tr>
+    </tbody>
+  </table>

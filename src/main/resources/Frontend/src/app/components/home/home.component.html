@@ -1,0 +1,122 @@
+<h3 style="color: white;" class="text-center">User Personal Detaills</h3>
+<table class="table table-light">
+  <thead>
+    <tr>
+      <th scope="col">UserName</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Contact</th>
+      <th>Reservation ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>{{userData.userName}}</th>
+      <td>{{userData.firstName}} {{userData.lastName}}</td>
+      <td>{{userData.email}}</td>
+      <td>{{userData.contact}}</td>
+      <td>{{userData.reservation.reservationId}}</td>
+      
+    </tr>
+  </tbody>
+</table>
+
+<h3 style="color: white;" class="text-center">User Reservation Detaills</h3>
+<table  class="table table-light">
+  <thead>
+    <tr>
+      
+      <th scope="col">Reservation Status</th>
+      <th scope="col">Reservation Type</th>
+      <th scope="col">Reservation Date</th>
+      <th scope="col">Reservation Time</th>
+      <th scope="col">Source</th>
+      <th scope="col">Destination</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>{{userData.reservation.reservationStatus}}</th>
+      <td>{{userData.reservation.reservationType}}</td>
+      <td>{{userData.reservation.reservationDate}}</td>
+      <td>{{userData.reservation.reservationTime}}</td>
+      <td>{{userData.reservation.source}}</td>
+      <td>{{userData.reservation.destination}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3 style="color: white;" class="text-center">Bus Associated with Reservation</h3>
+<table class="table table-light">
+  <thead>
+    <tr>
+      
+      <th scope="col">Bus Name</th>
+      <th scope="col">Bus Type</th>
+      <th scope="col">Arrival Time</th>
+      <th scope="col">Departure Time</th>
+      <th scope="col">Total Seats</th>
+      <th scope="col">Available Seats</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>{{userData.reservation.busId.busName}}</th>
+      <td>{{userData.reservation.busId.busType}}</td>
+      <td>{{userData.reservation.busId.arrivalTime}}</td>
+      <td>{{userData.reservation.busId.departureTime}}</td>
+      <td>{{userData.reservation.busId.seats}}</td>
+      <td>{{userData.reservation.busId.avaiableSeats}}</td>
+    </tr>
+  </tbody>
+</table>
+<br><br><br>
+
+<table class="table table-light">
+  <thead>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+
+        <td colspan="6">
+          <button type="submit" (click)="getReserved()" mat-raised-button color="primary">Add Reservation</button>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="6">
+          <button type="submit" (click)="deleteReservation()"  mat-raised-button color="accent">Delete Reservation</button>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="6">
+          <button type="button" (click)="addFeedback()" style="margin-left:20px;" mat-raised-button color="primary">Add Feedback</button>
+        </td>
+      </tr>
+  </thead>
+</table>
+<!-- <footer class="bg-light text-center text-lg-start mb">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">busreservation.com</a>
+  </div>
+</footer> -->

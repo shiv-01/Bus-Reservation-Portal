@@ -1,0 +1,34 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-1">Buses</div>
+    <div class="page__content shadow p-3 position-relative">
+      <div class="page__content-data position-absolute text-center">
+        <button class="open-button" (click)="openaddform()">Add Bus</button>
+        <div class="form-popup" id="myForm" #openAddForm>
+          <form  class="form-container" name="addBusForm" #addform="ngForm" (ngSubmit)="submitaddform(addform)">
+            <h1>Add Bus</h1>
+            <input type="number" placeholder="Bus Id" name="busid" [(ngModel)]="bus.busId" required>
+            <input type="text" placeholder="Bus Name" name="busname" [(ngModel)]="bus.busName" required>
+            <input type="text" placeholder="Driver Name" name="dname" [(ngModel)]="bus.driverName" required>
+            <input type="text" placeholder="Bus Type" name="bustype" [(ngModel)]="bus.busType" required>
+            <input type="text" placeholder="Route From" name="from" [(ngModel)]="bus.routeFrom" required>
+            <input type="text" placeholder="Route to" name="to" [(ngModel)]="bus.routeTo" required>
+            <input type="text" placeholder="Day" name="day" [(ngModel)]="bus.day" required>
+            <input type="text" placeholder="Arrival Time" name="arrival" [(ngModel)]="bus.arrivalTime" required>
+            <input type="text" placeholder="Departure Time" name="departure" [(ngModel)]="bus.departureTime" required>
+            <input type="number" placeholder="Seats" name="seats" [(ngModel)]="bus.seats" required>
+            <input type="number" placeholder="Available Seats" name="aseats" [(ngModel)]="bus.availableSeats" required>
+            <button type="submit" class="btn">Add</button>
+            <button class="back" (click)="closeform()">Back</button>
+          </form>
+        </div>
+        <button class="delete-button" (click)="opendelform()">Delete Bus</button>
+        <div class="form-popup" id="myForm" #openDelForm>
+          <form  class="form-container" name="addBusForm" #delform="ngForm" (ngSubmit)="submitdelform(delform)">
+            <h1>Delete Bus</h1>
+            <input type="number" placeholder="Bus Id" name="busid" [(ngModel)]="bus.busId" required>
+            <button type="submit" class="btn">Delete</button>
+            <button class="back" (click)="closeform()">Back</button>
+          </form>
+        </div>
+    </div>
+  </div>

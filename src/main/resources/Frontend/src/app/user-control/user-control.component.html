@@ -1,0 +1,14 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Users</div>
+    <div class="page__content shadow p-3 position-relative">
+      <div class="page__content-data position-absolute text-center">
+        <div class="form-container">
+        <form #userform="ngForm" id="deluser" name="deluser" (ngSubmit)="onClickSubmit(userform)" >
+          <label for="del">Delete User</label>
+          <input type="'text" id="del" name="del" placeholder="User Id" [(ngModel)]="userid">
+          <button type="submit" > Enter </button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-1">Routes</div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="page__content-data position-absolute text-center">
+      <button class="open-button" (click)="openaddform()">Add Route</button>
+      <div class="form-popup" id="myForm" #openAddForm>
+        <form  class="form-container" name="addRouteForm" #addform="ngForm" (ngSubmit)="submitaddform(addform)">
+          <h1>Add Route</h1>
+          <input type="number" placeholder="Route Id" name="routeid" [(ngModel)]="Route.routeId" required>
+          <input type="text" placeholder="From" name="from" [(ngModel)]="Route.routeFrom" required>
+          <input type="text" placeholder="To" name="to" [(ngModel)]="Route.routeTo" required>
+          <input type="text" placeholder="Distance" name="distance" [(ngModel)]="Route.distance" required>
+          <button type="submit" class="btn">Add</button>
+          <button class="back" (click)="closeform()">Back</button>
+        </form>
+      </div>
+      <button class="delete-button" (click)="opendelform()">Delete Route</button>
+      <div class="form-popup" id="myForm" #openDelForm>
+        <form  class="form-container" name="delBusForm" #delform="ngForm" (ngSubmit)="submitdelform(delform)">
+          <h1>Delete Route</h1>
+          <input type="number" placeholder="Route Id" name="routeid" [(ngModel)]="Route.routeId" required>
+          <button type="submit" class="btn">Delete</button>
+          <button class="back" (click)="closeform()">Back</button>
+        </form>
+      </div>
+  </div>
+</div>

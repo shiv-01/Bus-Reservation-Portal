@@ -1,0 +1,46 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-1">Buses</div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="page__content-data position-absolute text-center">
+      <input type="'text" id="view" name="view" placeholder="Feedback Id" [(ngModel)]="Feedback.feedbackId">
+      <button class="open-button" (click)="openviewtable()" (ngSubmit)="getFeedbackDetails(Feedback.feedbackId)">View Feedback</button>
+      <div class="form-popup" id="myTable" #openViewForm>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Feedback Id</th>
+              <th>Driver Rating</th>
+              <th>Service Rating</th>
+              <th>Overall Rating</th>
+              <th>Comments</th>
+              <th>Date</th>
+              <th>User Name</th>
+              <th>Bus Id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let fb of Feedback">
+              <td>fb.feedbackId</td>
+              <td>fb.driverRating</td>
+              <td>fb.serviceRating</td>
+              <td>fb.overallRating</td>
+              <td>fb.comments</td>
+              <td>fb.date</td>
+              <td>fb.users.userLoginId</td>
+              <td>fb.bus.busId</td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="back" (click)="closeform()">Back</button>
+      </div>
+      <button class="delete-button" (click)="opendelform()">Delete Feedback</button>
+      <div class="form-popup" id="myForm" #openDelForm>
+        <form  class="form-container" name="delFeedForm" #delform="ngForm" (ngSubmit)="submitdelform(delform)">
+          <h1>Delete Feedback</h1>
+          <input type="number" placeholder="Feedback Id" name="fbid" [(ngModel)]="Feedback.feedbackId" required>
+          <button type="submit" class="btn">Delete</button>
+          <button class="back" (click)="closeform()">Back</button>
+        </form>
+      </div>
+  </div>
+</div>

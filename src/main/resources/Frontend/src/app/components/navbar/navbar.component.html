@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+    <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+     <mat-icon>airport_shuttle</mat-icon>
+    </a>
+   <span>Bus Reservation</span>
+   <span class="example-spacer"></span>
+   <a [routerLink]="'/'" mat-icon-button class="example-icon favorite-icon mr ml" >
+    User Login
+  </a>
+   <a  mat-icon-button class="example-icon favorite-icon mr ml" (click)="show()" href="#popup">
+     Admin Login
+   </a>
+   <a [routerLink]="'/register'" mat-icon-button class="example-icon mr ml">
+    Register
+   </a>
+ </mat-toolbar>
+ <div class="pop-up" #popup id="popup">
+  <mat-card>
+<form #Admin="ngForm" (ngSubmit)="onclickSubmit(Admin)">
+ <mat-form-field class="full-width" appearance="outline">
+   <mat-label>Admin Username</mat-label>
+   <input required name="username" [(ngModel)]="admin.userName"  matInput placeholder="Enter Here">
+</mat-form-field>
+
+<!-- For password -->
+<mat-form-field class="full-width" appearance="outline">
+   <mat-label>Admin Paasword</mat-label>
+   <input type="password" required name="password" [(ngModel)]="admin.password" matInput placeholder="Enter Here">
+</mat-form-field>
+<div class="container text-center">
+   <button type="submit" mat-raised-button color="primary">Login</button>
+   </div>
+ </form>
+</mat-card>
+</div>
